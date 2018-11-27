@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul 09 10:26:44 2015
+
+@author: Stefano
+"""
+
+def rabbit(n,k):
+    if n<=2:
+        return 1
+    else:
+        return rabbit(n-1,k)+k*rabbit(n-2,k)
+        
+with open('rosalind_fib.txt','r') as inp:
+    with open('outputrabbit.txt','w') as out:
+        f=inp.readline()[:-1]
+        N=int(f[:2])
+        K=int(f[-1])
+        out.write(str(rabbit(N,K)))
